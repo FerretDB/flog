@@ -64,7 +64,7 @@ type consoleHandler struct {
 //
 // If out is a valid tty, the consoleHandler will send colorized messages.
 // If NO_COLOR environment variable is set colorized messages are disabled.
-func NewConsoleHandler(out io.Writer, opts *NewConsoleHandlerOpts) *consoleHandler {
+func NewConsoleHandler(out io.Writer, opts *NewConsoleHandlerOpts) slog.Handler {
 	ch := &consoleHandler{
 		opts:      cmp.Or(opts, new(NewConsoleHandlerOpts)),
 		testAttrs: nil,
